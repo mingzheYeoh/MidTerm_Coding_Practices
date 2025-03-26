@@ -1,4 +1,4 @@
-/*
+package adt_interface;/*
     A queue is follow FIFO principle.
      Basic Operation:
      @function enqueue():  add an entry to the back of the queue
@@ -9,11 +9,11 @@
      @function clear(): removes all entries from the queue.
 */
 
-public interface Queue <T>{
+public interface QueueInterface<T>{
     void enqueue(T newEntry);
-    T dequeue(T newEntry);
+    T dequeue();
     T getFront();
     boolean isEmpty();
-    T size();
+    int size();
     void clear();
 }
