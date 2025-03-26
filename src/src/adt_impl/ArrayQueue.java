@@ -42,6 +42,7 @@ public class ArrayQueue<T> implements QueueInterface<T> {
             backIndex--;
         }
         return front;
+
     }
 
     @Override
