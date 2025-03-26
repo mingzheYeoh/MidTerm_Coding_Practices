@@ -2,7 +2,7 @@ package adt_impl;
 
 import adt_interface.QueueInterface;
 
-public class ArrayQueue<T> implements QueueInterface<T> {
+public class ArrayQueue_Fixed<T> implements QueueInterface<T> {
 
     // need one array to store the element
     private T[] array;
@@ -13,11 +13,11 @@ public class ArrayQueue<T> implements QueueInterface<T> {
     // capacity of array
     private final static int DEFAULT_CAPACITY = 100;
 
-    public ArrayQueue(){
+    public ArrayQueue_Fixed(){
         this(DEFAULT_CAPACITY);
     }
 
-    public ArrayQueue(int initialCapacity){
+    public ArrayQueue_Fixed(int initialCapacity){
         array = (T[]) new Object[initialCapacity];
         backIndex = -1;  // indicates empty array queue
     }

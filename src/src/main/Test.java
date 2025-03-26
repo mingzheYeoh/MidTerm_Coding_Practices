@@ -1,12 +1,10 @@
 package main;
 
-import adt_impl.ArrayQueue;
-
-import java.util.Arrays;
+import adt_impl.ArrayQueue_Fixed;
 
 public class Test {
     public static void main(String[] args) {
-        ArrayQueue<Integer> queue = new ArrayQueue<>(3);
+        ArrayQueue_Fixed<Integer> queue = new ArrayQueue_Fixed<>(3);
 
         queue.enqueue(1);
         queue.enqueue(2);
