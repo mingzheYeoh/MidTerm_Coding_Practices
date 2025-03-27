@@ -2,7 +2,9 @@ package adt_impl;
 
 import adt_interface.QueueInterface;
 
-public class ArrayQueue_Fixed<T> implements QueueInterface<T> {
+import java.util.Iterator;
+
+public class ArrayQueue_Fixed<T> implements QueueInterface<T>{
 
     // need one array to store the element
     private T[] array;
@@ -98,4 +100,30 @@ public class ArrayQueue_Fixed<T> implements QueueInterface<T> {
         System.arraycopy(array, 0, newArray, 0, backIndex + 1);
         array = newArray;
     }
+
+    public Iterator<T> getIterator(){
+        return new ArrayQueueIterator();
+    }
+
+    private class ArrayQueueIterator implements Iterator<T>{
+        private int nextIndex;
+        private ArrayQueueIterator() {
+            nextIndex = 0;
+        }
+        @Override
+        public boolean hasNext(){
+            return nextIndex <= backIndex;
+        }
+        @Override
+        public T next(){
+            if(hasNext()) {
+                T nextEntry = array[nextIndex];
+                nextIndex++;
+                return nextEntry;
+            }else{
+                return null;
+            }
+        }
+    }
+
 }
